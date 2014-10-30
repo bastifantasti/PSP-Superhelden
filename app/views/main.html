@@ -1,0 +1,28 @@
+<div class="row">
+    <label class="sr-only" for="superhero">Search a Marvel Hero</label>
+    <input type="text" class="form-control input-lg" ng-model="superhero" id="superhero"
+           placeholder="Search a Marvel Hero" ui-keypress="{13:'keypressCallback($event)'}">
+
+    <span class="input-group-btn">
+   <button class="btn btn-success" type="button" ng-click="search()">Go!</button>
+</span>
+</div>
+
+<div class="row marketing" ng-show="hero.name">
+    <h3>PSP Superhero Infoscreen</h3>
+    <h4>{{hero.name}}</h4>
+    <p>
+        {{hero.description}}
+    </p>
+    <div class="row">
+        <div class="col-sm-4"><img class="img-responsive img-circle" ng-src="{{hero.image}}" title="{{hero.name}}"
+                                   alt="{{hero.name}}"></div>
+        <div class="col-sm-8">
+            <ul>
+                <li>Comics: {{hero.comics.available}}</li>
+                <li>Series: {{hero.series.available}}</li>
+                <li>Events: {{hero.events.available}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
